@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Browse Quizzes — QuizForge</title>
+<link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 32 32%22><rect width=%2232%22 height=%2232%22 rx=%228%22 fill=%22%233454D1%22/></svg>">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;600;700&family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@500;700&display=swap" rel="stylesheet">
+<script>(function(){ var t = localStorage.getItem('quizforge_theme') || (window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light'); document.documentElement.setAttribute('data-theme', t); })();</script>
+<link rel="stylesheet" href="css/variables.css">
+<link rel="stylesheet" href="css/main.css">
+<link rel="stylesheet" href="css/components.css">
+<style>
+  .filters-bar { display: flex; gap: var(--space-3); flex-wrap: wrap; align-items: center; margin-bottom: var(--space-8); }
+  .filters-bar .form-select { width: auto; flex: 0 0 auto; }
+  .filters-bar .search-input-wrap { flex: 1 1 220px; }
+  .search-input-wrap { position: relative; flex-grow: 1; min-width: 220px; }
+  .search-input-wrap svg { position: absolute; left: 12px; top: 50%; transform: translateY(-50%); width: 18px; height: 18px; color: var(--text-tertiary); }
+  .search-input-wrap input { padding-left: 2.5rem; }
+  .quiz-catalog-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: var(--space-6); }
+  .results-count { color: var(--text-secondary); font-size: var(--fs-sm); margin-bottom: var(--space-4); }
+  @media (max-width: 900px) { .quiz-catalog-grid { grid-template-columns: repeat(2, 1fr); } }
+  @media (max-width: 600px) {
+    .quiz-catalog-grid { grid-template-columns: 1fr; }
+    .filters-bar { flex-direction: column; align-items: stretch; }
+    .filters-bar .search-input-wrap, .filters-bar .form-select { flex: 0 0 auto; width: 100%; }
+  }
+</style>
+</head>
+<body>
+<a href="#main" class="skip-link">Skip to content</a>
+<div id="site-header-root"></div>
+
+<main id="main" class="page-main">
+  <div class="container">
+    <div class="page-header">
+      <span class="page-eyebrow">Catalog</span>
+      <h1 class="page-title">Browse Quizzes</h1>
+      <p class="page-subtitle">Filter by category, difficulty, or duration — or search for a specific topic.</p>
+    </div>
+
+    <div class="filters-bar">
+      <div class="search-input-wrap">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="8"/><path d="M21 21l-4.35-4.35"/></svg>
+        <input type="text" class="form-input" id="search-input" placeholder="Search quizzes by title…">
+      </div>
+      <select class="form-select" id="category-select"><option value="all">All Categories</option></select>
+      <select class="form-select" id="difficulty-select">
+        <option value="all">All Difficulties</option>
+        <option value="Beginner">Beginner</option>
+        <option value="Intermediate">Intermediate</option>
+        <option value="Advanced">Advanced</option>
+      </select>
+      <select class="form-select" id="duration-select">
+        <option value="all">Any Duration</option>
+        <option value="short">Short (&le;10 min)</option>
+        <option value="medium">Medium (11&ndash;20 min)</option>
+        <option value="long">Long (20+ min)</option>
+      </select>
+      <select class="form-select" id="sort-select">
+        <option value="popular">Popular</option>
+        <option value="newest">Newest</option>
+      </select>
+    </div>
+
+    <p class="results-count" id="results-count"></p>
+
+    <div class="quiz-catalog-grid" id="quiz-grid">
+      <div class="card skeleton skeleton-card"></div>
+      <div class="card skeleton skeleton-card"></div>
+      <div class="card skeleton skeleton-card"></div>
+      <div class="card skeleton skeleton-card"></div>
+      <div class="card skeleton skeleton-card"></div>
+      <div class="card skeleton skeleton-card"></div>
+    </div>
+  </div>
+</main>
+
+<div id="site-footer-root"></div>
+
+<script src="js/config.js"></script>
+<script src="js/theme.js"></script>
+<script src="js/api.js"></script>
+<script src="js/icons.js"></script>
+<script src="js/toast.js"></script>
+<script src="js/modal.js"></script>
+<script src="js/nav.js"></script>
+<script src="js/quizzes.js"></script>
+</body>
+</html>

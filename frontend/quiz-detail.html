@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Quiz Details — QuizForge</title>
+<link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 32 32%22><rect width=%2232%22 height=%2232%22 rx=%228%22 fill=%22%233454D1%22/></svg>">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;600;700&family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@500;700&display=swap" rel="stylesheet">
+<script>(function(){ var t = localStorage.getItem('quizforge_theme') || (window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light'); document.documentElement.setAttribute('data-theme', t); })();</script>
+<link rel="stylesheet" href="css/variables.css">
+<link rel="stylesheet" href="css/main.css">
+<link rel="stylesheet" href="css/components.css">
+<style>
+  .detail-shell { max-width: 720px; margin: 0 auto; }
+  .detail-top { display: flex; align-items: center; gap: var(--space-4); margin-bottom: var(--space-6); }
+  .detail-icon { width: 56px; height: 56px; border-radius: var(--radius-md); background: var(--color-primary-100); color: var(--color-primary-600); display: flex; align-items: center; justify-content: center; flex-shrink: 0; }
+  .detail-icon svg { width: 28px; height: 28px; }
+  [data-theme="dark"] .detail-icon { background: var(--color-primary-900); color: var(--color-primary-300); }
+  .detail-meta-row { display: flex; gap: var(--space-6); flex-wrap: wrap; margin: var(--space-6) 0; padding: var(--space-5); background: var(--bg-surface-muted); border-radius: var(--radius-md); }
+  .detail-meta-item { display: flex; flex-direction: column; gap: 2px; }
+  .detail-meta-item .lbl { font-size: var(--fs-xs); color: var(--text-tertiary); text-transform: uppercase; letter-spacing: 0.04em; }
+  .detail-meta-item .val { font-family: var(--font-mono); font-weight: 700; }
+  .rules-list { list-style: none; padding: 0; margin: var(--space-4) 0; display: flex; flex-direction: column; gap: var(--space-3); }
+  .rules-list li { display: flex; gap: var(--space-3); font-size: var(--fs-sm); color: var(--text-secondary); }
+  .rules-list svg { width: 18px; height: 18px; color: var(--accent-primary); flex-shrink: 0; margin-top: 2px; }
+</style>
+</head>
+<body>
+<a href="#main" class="skip-link">Skip to content</a>
+<div id="site-header-root"></div>
+
+<main id="main" class="page-main">
+  <div class="container detail-shell" id="detail-content">
+    <div class="skeleton skeleton-card" style="height: 400px;"></div>
+  </div>
+</main>
+
+<div id="site-footer-root"></div>
+
+<script src="js/config.js"></script>
+<script src="js/theme.js"></script>
+<script src="js/api.js"></script>
+<script src="js/icons.js"></script>
+<script src="js/toast.js"></script>
+<script src="js/modal.js"></script>
+<script src="js/nav.js"></script>
+<script src="js/quiz-detail.js"></script>
+</body>
+</html>

@@ -1,0 +1,24 @@
+# Netlify configuration for the QuizForge frontend (static HTML/CSS/JS).
+# Deploy: in the Netlify dashboard, "Add new site" -> "Import an existing
+# project", point the base directory at "frontend", and Netlify will pick
+# this file up automatically if it's placed at the repo root (as it is here)
+# with the base directory set below.
+
+[build]
+  base = "frontend"
+  publish = "."
+  command = ""
+
+# Client-side routing isn't used (this is a classic multi-page app), so no
+# SPA redirect rules are needed. A basic 404 fallback keeps things tidy.
+[[redirects]]
+  from = "/*"
+  to = "/404.html"
+  status = 404
+
+[[headers]]
+  for = "/*"
+  [headers.values]
+    X-Frame-Options = "SAMEORIGIN"
+    X-Content-Type-Options = "nosniff"
+    Referrer-Policy = "strict-origin-when-cross-origin"

@@ -1,0 +1,30 @@
+# --- Python / backend --------------------------------------------------------------
+__pycache__/
+*.pyc
+*.pyo
+.Python
+env/
+venv/
+.venv/
+*.egg-info/
+backend/dev.db
+backend/*.db
+.pytest_cache/
+
+# --- Environment secrets --------------------------------------------------------------
+.env
+.env.local
+*.env
+
+# --- Node (if any tooling is added later) --------------------------------------------------------------
+node_modules/
+
+# --- OS / editor --------------------------------------------------------------
+.DS_Store
+Thumbs.db
+.vscode/
+.idea/
+*.swp
+
+# --- Logs --------------------------------------------------------------
+*.log

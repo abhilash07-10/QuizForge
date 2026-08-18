@@ -1,0 +1,235 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>QuizForge — Challenge Your Knowledge. Track Your Progress.</title>
+<meta name="description" content="QuizForge is a modern practice-quiz and mock-test platform. Practice. Improve. Master real-world technical topics with instant scoring and analytics.">
+<link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 32 32%22><rect width=%2232%22 height=%2232%22 rx=%228%22 fill=%22%233454D1%22/><path d=%22M9 21L14 11L17 17L20 11L23 21%22 stroke=%22white%22 stroke-width=%222.2%22 fill=%22none%22 stroke-linecap=%22round%22 stroke-linejoin=%22round%22/></svg>">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;600;700&family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@500;700&display=swap" rel="stylesheet">
+<script>
+  (function(){ var t = localStorage.getItem('quizforge_theme') || (window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light'); document.documentElement.setAttribute('data-theme', t); })();
+</script>
+<link rel="stylesheet" href="css/variables.css">
+<link rel="stylesheet" href="css/main.css">
+<link rel="stylesheet" href="css/components.css">
+<link rel="stylesheet" href="css/landing.css">
+</head>
+<body>
+<a href="#main" class="skip-link">Skip to content</a>
+
+<div id="site-header-root"></div>
+
+<main id="main">
+
+  <section class="hero">
+    <div class="container hero-grid">
+      <div class="hero-copy">
+        <span class="hero-eyebrow">Practice quizzes &amp; mock tests</span>
+        <h1>Challenge Your Knowledge.<br><span class="accent">Practice. Improve. Master.</span></h1>
+        <p class="hero-sub">QuizForge helps engineering students, job seekers, and lifelong learners sharpen real technical skills — with instant scoring, detailed analytics, and a progress system that keeps you coming back.</p>
+        <div class="hero-actions">
+          <a href="register.html" class="btn btn-primary btn-lg">Start Practicing</a>
+          <a href="quizzes.html" class="btn btn-secondary btn-lg">Explore Quizzes</a>
+        </div>
+        <div class="hero-stats" id="hero-stats">
+          <div class="hero-stat"><span class="num">—</span><span class="lbl">Quizzes</span></div>
+          <div class="hero-stat"><span class="num">—</span><span class="lbl">Questions</span></div>
+          <div class="hero-stat"><span class="num">—</span><span class="lbl">Categories</span></div>
+        </div>
+      </div>
+
+      <div class="hero-visual">
+        <div class="hero-panel">
+          <div class="panel-label">Live Score Readout</div>
+          <div class="score-ring-wrap" id="hero-ring">
+            <svg width="180" height="180" viewBox="0 0 180 180">
+              <circle class="score-ring-track" cx="90" cy="90" r="78" stroke-width="14"></circle>
+              <circle class="score-ring-fill" id="hero-ring-fill" cx="90" cy="90" r="78" stroke-width="14"
+                stroke-dasharray="490" stroke-dashoffset="490"></circle>
+            </svg>
+            <div class="score-ring-label">
+              <span class="big" id="hero-ring-value" style="font-size:2rem;">0%</span>
+              <span class="small">Avg. mastery</span>
+            </div>
+          </div>
+          <div class="hero-panel-chips">
+            <span class="hero-panel-chip">Python 90%</span>
+            <span class="hero-panel-chip">SQL 84%</span>
+            <span class="hero-panel-chip">DBMS 76%</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section section-alt" id="features">
+    <div class="container">
+      <div class="section-head">
+        <span class="section-eyebrow">Why QuizForge</span>
+        <h2>Built for real skill-building, not busywork</h2>
+        <p>Every feature is designed to help you retain what you learn and prove it — whether that's for an interview, an exam, or your own confidence.</p>
+      </div>
+      <div class="feature-grid">
+        <div class="card feature-card">
+          <div class="feature-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M13 2L3 14h9l-1 8 10-12h-9l1-8z"/></svg></div>
+          <h3>Instant, honest scoring</h3>
+          <p>Every quiz is scored the moment you submit, calculated straight from the database — no fake numbers, ever.</p>
+        </div>
+        <div class="card feature-card">
+          <div class="feature-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="23 6 13.5 15.5 8.5 10.5 1 18"/><polyline points="17 6 23 6 23 12"/></svg></div>
+          <h3>Real performance analytics</h3>
+          <p>Track your accuracy, streaks, and category strengths over time with charts built from your actual attempt history.</p>
+        </div>
+        <div class="card feature-card">
+          <div class="feature-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><circle cx="12" cy="12" r="6"/><circle cx="12" cy="12" r="2"/></svg></div>
+          <h3>Focused practice sets</h3>
+          <p>Beginner-to-advanced quizzes across 11 in-demand technical categories, from Python to Computer Networks.</p>
+        </div>
+        <div class="card feature-card">
+          <div class="feature-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M8.5 14.5A2.5 2.5 0 0011 12c0-1.38-.5-2-1-3-1.072-2.143-.224-4.054 2-6 .5 2.5 2 4.9 4 6.5 2 1.6 3 3.5 3 5.5a7 7 0 11-14 0c0-1.153.433-2.294 1-3a2.5 2.5 0 002.5 2.5z"/></svg></div>
+          <h3>Streaks that stick</h3>
+          <p>A daily streak system and XP rewards keep practice consistent without feeling like a chore.</p>
+        </div>
+        <div class="card feature-card">
+          <div class="feature-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="8" r="7"/><path d="M8.21 13.89L7 23l5-3 5 3-1.21-9.12"/></svg></div>
+          <h3>Achievements that mean something</h3>
+          <p>Unlock badges tied to real activity: perfect scores, mastery streaks, and category expertise.</p>
+        </div>
+        <div class="card feature-card">
+          <div class="feature-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M17 21v-2a4 4 0 00-4-4H5a4 4 0 00-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 00-3-3.87M16 3.13a4 4 0 010 7.75"/></svg></div>
+          <h3>Leaderboards, done right</h3>
+          <p>Compare progress weekly, monthly, or all-time — without ever exposing anyone's private data.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="container">
+      <div class="section-head">
+        <span class="section-eyebrow">Popular Categories</span>
+        <h2>Practice the topics that matter</h2>
+        <p>From core programming languages to systems fundamentals and aptitude prep.</p>
+      </div>
+      <div class="category-grid" id="category-grid"></div>
+    </div>
+  </section>
+
+  <section class="section section-alt" id="how-it-works">
+    <div class="container">
+      <div class="section-head">
+        <span class="section-eyebrow">How It Works</span>
+        <h2>From sign-up to mastery in four steps</h2>
+      </div>
+      <div class="steps-row">
+        <div class="step-item">
+          <div class="step-marker">1</div>
+          <h3>Create your account</h3>
+          <p>Sign up in seconds and land on your personal dashboard.</p>
+        </div>
+        <div class="step-item">
+          <div class="step-marker">2</div>
+          <h3>Pick a quiz</h3>
+          <p>Browse by category, difficulty, or search for a specific topic.</p>
+        </div>
+        <div class="step-item">
+          <div class="step-marker">3</div>
+          <h3>Take the test</h3>
+          <p>A focused, timed exam interface with a question navigator.</p>
+        </div>
+        <div class="step-item">
+          <div class="step-marker">4</div>
+          <h3>Review &amp; improve</h3>
+          <p>See detailed results, explanations, and updated analytics.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="container showcase-grid">
+      <div class="showcase-copy">
+        <span class="section-eyebrow">Performance Tracking</span>
+        <h2>Watch your mastery grow, quiz after quiz</h2>
+        <p>QuizForge calculates every chart directly from your attempt history — accuracy, category strengths, weekly activity, and score trends.</p>
+        <ul class="showcase-list">
+          <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 11.08V12a10 10 0 11-5.93-9.14"/><path d="M22 4L12 14.01l-3-3"/></svg> Score-over-time and weekly activity charts</li>
+          <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 11.08V12a10 10 0 11-5.93-9.14"/><path d="M22 4L12 14.01l-3-3"/></svg> Category-by-category accuracy breakdown</li>
+          <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 11.08V12a10 10 0 11-5.93-9.14"/><path d="M22 4L12 14.01l-3-3"/></svg> Streak tracking that never double-counts a day</li>
+          <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 11.08V12a10 10 0 11-5.93-9.14"/><path d="M22 4L12 14.01l-3-3"/></svg> XP system with difficulty and streak bonuses</li>
+        </ul>
+      </div>
+      <div class="card mock-chart-card">
+        <h3>Category Performance</h3>
+        <div class="mock-bars">
+          <div class="mock-bar" style="height:90%"></div>
+          <div class="mock-bar" style="height:84%"></div>
+          <div class="mock-bar" style="height:76%"></div>
+          <div class="mock-bar" style="height:88%"></div>
+          <div class="mock-bar" style="height:65%"></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section section-alt">
+    <div class="container">
+      <div class="section-head">
+        <span class="section-eyebrow">Achievements</span>
+        <h2>Unlock badges as you learn</h2>
+      </div>
+      <div class="achv-strip">
+        <div class="card achievement-card">
+          <div class="achievement-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 15s1-1 4-1 5 2 8 2 4-1 4-1V3s-1 1-4 1-5-2-8-2-4 1-4 1z"/><line x1="4" y1="22" x2="4" y2="15"/></svg></div>
+          <h4>First Quiz</h4>
+          <p>Complete your first quiz</p>
+        </div>
+        <div class="card achievement-card">
+          <div class="achievement-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg></div>
+          <h4>Perfect Score</h4>
+          <p>Score 100% on any quiz</p>
+        </div>
+        <div class="card achievement-card">
+          <div class="achievement-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M8.5 14.5A2.5 2.5 0 0011 12c0-1.38-.5-2-1-3-1.072-2.143-.224-4.054 2-6 .5 2.5 2 4.9 4 6.5 2 1.6 3 3.5 3 5.5a7 7 0 11-14 0c0-1.153.433-2.294 1-3a2.5 2.5 0 002.5 2.5z"/></svg></div>
+          <h4>7-Day Streak</h4>
+          <p>Practice 7 days in a row</p>
+        </div>
+        <div class="card achievement-card">
+          <div class="achievement-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="8" r="7"/><path d="M8.21 13.89L7 23l5-3 5 3-1.21-9.12"/></svg></div>
+          <h4>Category Master</h4>
+          <p>Average 90%+ in a category</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="container">
+      <div class="cta-band">
+        <h2>Ready to test yourself?</h2>
+        <p>Start your first quiz — it takes less than a minute to sign up.</p>
+        <div class="hero-actions">
+          <a href="register.html" class="btn btn-ember btn-lg">Start your first quiz</a>
+          <a href="quizzes.html" class="btn btn-secondary btn-lg">Explore Quizzes</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+</main>
+
+<div id="site-footer-root"></div>
+
+<script src="js/config.js"></script>
+<script src="js/theme.js"></script>
+<script src="js/api.js"></script>
+<script src="js/icons.js"></script>
+<script src="js/toast.js"></script>
+<script src="js/modal.js"></script>
+<script src="js/nav.js"></script>
+<script src="js/landing.js"></script>
+</body>
+</html>

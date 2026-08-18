@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Dashboard — QuizForge</title>
+<link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 32 32%22><rect width=%2232%22 height=%2232%22 rx=%228%22 fill=%22%233454D1%22/></svg>">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;600;700&family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@500;700&display=swap" rel="stylesheet">
+<script>(function(){ var t = localStorage.getItem('quizforge_theme') || (window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light'); document.documentElement.setAttribute('data-theme', t); })();</script>
+<link rel="stylesheet" href="css/variables.css">
+<link rel="stylesheet" href="css/main.css">
+<link rel="stylesheet" href="css/components.css">
+<script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/4.4.4/chart.umd.min.js"></script>
+</head>
+<body>
+<a href="#main" class="skip-link">Skip to content</a>
+<div id="site-header-root"></div>
+
+<main id="main" class="page-main">
+  <div class="container">
+
+    <div class="page-header" id="welcome-header">
+      <span class="page-eyebrow">Dashboard</span>
+      <h1 class="page-title">Welcome back 👋</h1>
+      <p class="page-subtitle">Keep learning. Keep improving.</p>
+    </div>
+
+    <!-- Stat cards -->
+    <div class="grid" style="grid-template-columns: repeat(4, 1fr); margin-bottom: var(--space-8);" id="stat-cards">
+      <div class="card skeleton skeleton-card"></div>
+      <div class="card skeleton skeleton-card"></div>
+      <div class="card skeleton skeleton-card"></div>
+      <div class="card skeleton skeleton-card"></div>
+    </div>
+
+    <div class="grid" style="grid-template-columns: 2fr 1fr; align-items: start; margin-bottom: var(--space-8);">
+      <div class="card chart-card">
+        <h3>Score Over Time</h3>
+        <p class="chart-sub">Your last 20 completed attempts</p>
+        <div class="chart-canvas-wrap"><canvas id="score-chart"></canvas></div>
+      </div>
+      <div class="card chart-card">
+        <h3>Weekly Activity</h3>
+        <p class="chart-sub">Quizzes completed, last 7 days</p>
+        <div class="chart-canvas-wrap"><canvas id="activity-chart"></canvas></div>
+      </div>
+    </div>
+
+    <!-- Recommended / continue learning -->
+    <div class="page-header" style="margin-top: var(--space-12);">
+      <h2 style="font-size: var(--fs-xl);">Recommended Quizzes</h2>
+      <p class="text-muted text-sm">Picked based on active categories and popularity.</p>
+    </div>
+    <div class="grid" style="grid-template-columns: repeat(3, 1fr); margin-bottom: var(--space-8);" id="recommended-grid">
+      <div class="card skeleton skeleton-card"></div>
+      <div class="card skeleton skeleton-card"></div>
+      <div class="card skeleton skeleton-card"></div>
+    </div>
+
+    <div class="grid" style="grid-template-columns: 1.3fr 1fr; align-items: start;">
+      <!-- Recent results -->
+      <div>
+        <div class="page-header">
+          <h2 style="font-size: var(--fs-xl);">Recent Results</h2>
+        </div>
+        <div class="card" id="recent-results-card">
+          <div style="padding: var(--space-6);">
+            <div class="skeleton skeleton-line" style="width: 100%;"></div>
+            <div class="skeleton skeleton-line" style="width: 90%;"></div>
+            <div class="skeleton skeleton-line" style="width: 95%;"></div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Category performance + achievements -->
+      <div>
+        <div class="page-header">
+          <h2 style="font-size: var(--fs-xl);">Category Performance</h2>
+        </div>
+        <div class="card card-padded" id="category-performance-card">
+          <div class="skeleton skeleton-line" style="width: 100%;"></div>
+          <div class="skeleton skeleton-line" style="width: 80%;"></div>
+        </div>
+
+        <div class="page-header" id="achievements" style="margin-top: var(--space-8);">
+          <h2 style="font-size: var(--fs-xl);">Achievements</h2>
+        </div>
+        <div class="grid" style="grid-template-columns: repeat(3, 1fr);" id="achievements-mini-grid"></div>
+      </div>
+    </div>
+
+  </div>
+</main>
+
+<div id="site-footer-root"></div>
+
+<script src="js/config.js"></script>
+<script src="js/theme.js"></script>
+<script src="js/api.js"></script>
+<script src="js/icons.js"></script>
+<script src="js/toast.js"></script>
+<script src="js/modal.js"></script>
+<script src="js/nav.js"></script>
+<script src="js/auth-guard.js"></script>
+<script src="js/dashboard.js"></script>
+</body>
+</html>

@@ -1,0 +1,23 @@
+# Render.com Blueprint for QuizForge backend
+# Deploy: connect this repo in the Render dashboard -> "New +" -> "Blueprint"
+# and point it at this file. Fill in DATABASE_URL and FRONTEND_URL after
+# creating the service (or set them here if you're comfortable committing
+# non-secret defaults).
+
+services:
+  - type: web
+    name: quizforge-api
+    runtime: python
+    plan: free
+    rootDir: backend
+    buildCommand: pip install -r requirements.txt
+    startCommand: gunicorn app:app --bind 0.0.0.0:$PORT --workers 2 --threads 4 --timeout 60
+    envVars:
+      - key: FLASK_ENV
+        value: production
+      - key: SECRET_KEY
+        generateValue: true
+      - key: DATABASE_URL
+        sync: false   # set manually to your Neon connection string
+      - key: FRONTEND_URL
+        sync: false   # set manually to your deployed frontend URL

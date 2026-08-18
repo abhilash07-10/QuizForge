@@ -1,0 +1,159 @@
+/* ==========================================================================
+   QuizForge Design Tokens
+   ========================================================================== */
+
+:root {
+  /* --- Brand palette ----------------------------------------------- */
+  --color-primary-50:  #EEF1FD;
+  --color-primary-100: #DCE3FB;
+  --color-primary-200: #B4C1F5;
+  --color-primary-300: #8A9EEE;
+  --color-primary-400: #5C77E0;
+  --color-primary-500: #3454D1;   /* Forge Blue -- primary brand color */
+  --color-primary-600: #2B44B0;
+  --color-primary-700: #26399C;
+  --color-primary-800: #1D2C78;
+  --color-primary-900: #141F55;
+
+  --color-ember-300: #FFC299;
+  --color-ember-400: #FFA766;
+  --color-ember-500: #FF8A3D;    /* Ember -- sparse accent, CTAs / streaks / XP */
+  --color-ember-600: #E56E1F;
+  --color-ember-700: #C25714;
+
+  --color-success-500: #1FAA6D;
+  --color-success-100: #DBF3E7;
+  --color-danger-500:  #E5484D;
+  --color-danger-100:  #FCE3E4;
+  --color-warning-500: #F5A623;
+  --color-warning-100: #FDF0DA;
+
+  /* --- Neutrals ------------------------------------------------------ */
+  --color-ink-900: #101623;
+  --color-ink-800: #171F30;
+  --color-ink-700: #232C42;
+  --color-ink-600: #3A4258;
+  --color-ink-500: #5B6478;
+  --color-ink-400: #838CA0;
+  --color-ink-300: #ABB2C2;
+  --color-ink-200: #D3D7E1;
+  --color-ink-100: #E9EBF1;
+  --color-ink-50:  #F6F7FB;
+  --color-white:   #FFFFFF;
+
+  /* --- Semantic tokens (Light mode default) --------------------------- */
+  --bg-page: var(--color-ink-50);
+  --bg-surface: var(--color-white);
+  --bg-surface-raised: var(--color-white);
+  --bg-surface-muted: var(--color-ink-100);
+  --bg-inverse: var(--color-ink-900);
+
+  --text-primary: var(--color-ink-900);
+  --text-secondary: var(--color-ink-500);
+  --text-tertiary: var(--color-ink-400);
+  --text-on-primary: var(--color-white);
+  --text-on-inverse: var(--color-ink-50);
+  --text-link: var(--color-primary-600);
+
+  --border-subtle: var(--color-ink-100);
+  --border-default: var(--color-ink-200);
+  --border-strong: var(--color-ink-300);
+
+  --accent-primary: var(--color-primary-500);
+  --accent-primary-hover: var(--color-primary-600);
+  --accent-primary-active: var(--color-primary-700);
+  --accent-ember: var(--color-ember-500);
+
+  --shadow-color: 222deg 40% 20%;
+  --shadow-sm: 0 1px 2px hsl(var(--shadow-color) / 0.06);
+  --shadow-md: 0 4px 12px hsl(var(--shadow-color) / 0.08), 0 1px 3px hsl(var(--shadow-color) / 0.06);
+  --shadow-lg: 0 12px 32px hsl(var(--shadow-color) / 0.12), 0 2px 6px hsl(var(--shadow-color) / 0.06);
+  --shadow-xl: 0 24px 60px hsl(var(--shadow-color) / 0.18);
+
+  /* --- Type scale ------------------------------------------------------ */
+  --font-display: 'Space Grotesk', 'Segoe UI', sans-serif;
+  --font-body: 'Inter', 'Segoe UI', sans-serif;
+  --font-mono: 'JetBrains Mono', 'Consolas', monospace;
+
+  --fs-xs: 0.75rem;
+  --fs-sm: 0.875rem;
+  --fs-base: 1rem;
+  --fs-md: 1.125rem;
+  --fs-lg: 1.25rem;
+  --fs-xl: 1.5rem;
+  --fs-2xl: 1.875rem;
+  --fs-3xl: 2.375rem;
+  --fs-4xl: 3rem;
+  --fs-5xl: 3.75rem;
+
+  /* --- Spacing scale ---------------------------------------------------- */
+  --space-1: 0.25rem;
+  --space-2: 0.5rem;
+  --space-3: 0.75rem;
+  --space-4: 1rem;
+  --space-5: 1.25rem;
+  --space-6: 1.5rem;
+  --space-8: 2rem;
+  --space-10: 2.5rem;
+  --space-12: 3rem;
+  --space-16: 4rem;
+  --space-20: 5rem;
+  --space-24: 6rem;
+
+  /* --- Radius / motion ---------------------------------------------------- */
+  --radius-sm: 6px;
+  --radius-md: 10px;
+  --radius-lg: 16px;
+  --radius-full: 999px;
+
+  --ease-out: cubic-bezier(0.16, 1, 0.3, 1);
+  --duration-fast: 150ms;
+  --duration-base: 250ms;
+  --duration-slow: 450ms;
+
+  --container-max: 1200px;
+  --header-height: 68px;
+}
+
+/* --- Dark mode overrides ------------------------------------------------ */
+[data-theme="dark"] {
+  --bg-page: var(--color-ink-900);
+  --bg-surface: var(--color-ink-800);
+  --bg-surface-raised: var(--color-ink-700);
+  --bg-surface-muted: var(--color-ink-700);
+  --bg-inverse: var(--color-ink-50);
+
+  --text-primary: var(--color-ink-50);
+  --text-secondary: var(--color-ink-300);
+  --text-tertiary: var(--color-ink-400);
+  --text-on-primary: var(--color-white);
+  --text-on-inverse: var(--color-ink-900);
+  --text-link: var(--color-primary-300);
+
+  --border-subtle: var(--color-ink-700);
+  --border-default: var(--color-ink-600);
+  --border-strong: var(--color-ink-500);
+
+  --accent-primary: var(--color-primary-400);
+  --accent-primary-hover: var(--color-primary-300);
+  --accent-primary-active: var(--color-primary-200);
+
+  --shadow-color: 222deg 60% 3%;
+  --shadow-sm: 0 1px 2px hsl(var(--shadow-color) / 0.4);
+  --shadow-md: 0 4px 12px hsl(var(--shadow-color) / 0.45), 0 1px 3px hsl(var(--shadow-color) / 0.3);
+  --shadow-lg: 0 12px 32px hsl(var(--shadow-color) / 0.55);
+  --shadow-xl: 0 24px 60px hsl(var(--shadow-color) / 0.65);
+
+  --color-success-100: #113828;
+  --color-danger-100: #3A1518;
+  --color-warning-100: #3A2C0E;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}
