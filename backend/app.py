@@ -16,8 +16,24 @@ def create_app(config_name: str = None) -> Flask:
 
     # CORS: allow the configured frontend origin (comma-separated list
     # supported for local + deployed frontends at once).
-    origins = [o.strip() for o in app.config["FRONTEND_URL"].split(",") if o.strip()]
-    CORS(app, resources={r"/api/*": {"origins": origins or "*"}}, supports_credentials=False)
+        # CORS: allow configured frontend origins.
+    # Supports multiple origins separated by commas and removes trailing slashes.
+    origins = [
+        o.strip().rstrip("/")
+        for o in app.config["FRONTEND_URL"].split(",")
+        if o.strip()
+    ]
+
+    # Production frontend fallback.
+    netlify_origin = "https://spiffy-pithivier-fd2913.netlify.app"
+    if netlify_origin not in origins:
+        origins.append(netlify_origin)
+
+    CORS(
+        app,
+        resources={r"/api/*": {"origins": origins}},
+        supports_credentials=False
+    )
 
     register_blueprints(app)
     register_error_handlers(app)
