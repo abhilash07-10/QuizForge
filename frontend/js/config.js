@@ -5,7 +5,7 @@
    server, so you shouldn't need to touch this file until you deploy.
    ========================================================================== */
 
-window.QUIZFORGE_API_BASE = 'http://localhost:5000/api';
+window.QUIZFORGE_API_BASE = 'https://quizforge-backend-7or7.onrender.com/api';
 
 // Example for a deployed backend:
 // window.QUIZFORGE_API_BASE = 'https://quizforge-api.onrender.com/api';
